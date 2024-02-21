@@ -12,9 +12,10 @@ import java.util.stream.Collectors;
 public enum QuestionSubmitLanguageEnum {
 
     JAVA("java", "java"),
-    CPLUSPLUS("c++", "c++"),
-    GOLANG("golang", "golang"),
-    CSHARP("C#", "C#");
+    CPLUSPLUS("cpp", "cpp"),
+    GOLANG("go", "go"),
+    CSHARP("csharp", "" +
+            "");
 
     private final String text;
 

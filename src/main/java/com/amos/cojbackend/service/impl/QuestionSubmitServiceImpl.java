@@ -4,6 +4,7 @@ import cn.hutool.core.collection.CollUtil;
 import com.amos.cojbackend.common.ErrorCode;
 import com.amos.cojbackend.constant.CommonConstant;
 import com.amos.cojbackend.exception.BusinessException;
+import com.amos.cojbackend.judge.JudgeService;
 import com.amos.cojbackend.mapper.QuestionSubmitMapper;
 import com.amos.cojbackend.model.dto.questionsubmit.QuestionSubmitAddRequest;
 import com.amos.cojbackend.model.dto.questionsubmit.QuestionSubmitQueryRequest;
@@ -22,6 +23,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.commons.lang3.ObjectUtils;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -29,6 +31,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 /**
@@ -45,6 +48,10 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
 
     @Resource
     private UserService userService;
+
+    @Resource
+    @Lazy
+    private JudgeService judgeService;
 
     /**
      * 题目提交
@@ -80,6 +87,9 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
         if (!save) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "数据插入失败");
         }
+        Long questionSubmitId = questionSubmit.getId();
+        // 异步执行判题
+        CompletableFuture.runAsync(() -> judgeService.doJudge(questionSubmitId));
         return questionSubmit.getId();
     }
 
