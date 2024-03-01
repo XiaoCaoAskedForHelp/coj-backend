@@ -1,4 +1,4 @@
-package com.amos.cojbackend.model.dto.question;
+package com.amos.cojbackend.judge.codesandbox.model;
 
 import lombok.Data;
 

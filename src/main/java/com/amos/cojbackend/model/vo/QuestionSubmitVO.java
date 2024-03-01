@@ -1,7 +1,7 @@
 package com.amos.cojbackend.model.vo;
 
 import cn.hutool.json.JSONUtil;
-import com.amos.cojbackend.model.dto.question.JudgeInfo;
+import com.amos.cojbackend.judge.codesandbox.model.JudgeInfo;
 import com.amos.cojbackend.model.entity.QuestionSubmit;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;

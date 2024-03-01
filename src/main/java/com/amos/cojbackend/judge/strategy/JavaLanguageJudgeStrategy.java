@@ -1,13 +1,14 @@
 package com.amos.cojbackend.judge.strategy;
 
 import cn.hutool.json.JSONUtil;
+import com.amos.cojbackend.judge.codesandbox.model.JudgeInfo;
 import com.amos.cojbackend.model.dto.question.JudgeCase;
-import com.amos.cojbackend.model.dto.question.JudgeInfo;
 import com.amos.cojbackend.model.dto.questionsubmit.JudgeConfig;
 import com.amos.cojbackend.model.entity.Question;
 import com.amos.cojbackend.model.enums.JudgeInfoMessageEnum;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Java程序的判题策略
@@ -16,8 +17,8 @@ public class JavaLanguageJudgeStrategy implements JudgeStrategy {
     @Override
     public JudgeInfo doJudgeInfo(JudgeContext judgeContext) {
         JudgeInfo judgeInfo = judgeContext.getJudgeInfo();
-        Long memory = judgeInfo.getMemory();
-        Long time = judgeInfo.getTime();
+        Long memory = Optional.ofNullable(judgeInfo.getMemory()).orElse(0L);
+        Long time = Optional.ofNullable(judgeInfo.getTime()).orElse(0L);
         List<JudgeCase> judgeCaseList = judgeContext.getJudgeCaseList();
         List<String> outputList = judgeContext.getOutputList();
         Question question = judgeContext.getQuestion();

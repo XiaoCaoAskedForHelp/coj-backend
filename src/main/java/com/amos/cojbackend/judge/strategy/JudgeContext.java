@@ -1,7 +1,7 @@
 package com.amos.cojbackend.judge.strategy;
 
 import com.amos.cojbackend.model.dto.question.JudgeCase;
-import com.amos.cojbackend.model.dto.question.JudgeInfo;
+import com.amos.cojbackend.judge.codesandbox.model.JudgeInfo;
 import com.amos.cojbackend.model.entity.Question;
 import com.amos.cojbackend.model.entity.QuestionSubmit;
 import lombok.Data;

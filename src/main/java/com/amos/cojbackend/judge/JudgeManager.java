@@ -4,7 +4,7 @@ import com.amos.cojbackend.judge.strategy.DefaultJudgeStrategy;
 import com.amos.cojbackend.judge.strategy.JavaLanguageJudgeStrategy;
 import com.amos.cojbackend.judge.strategy.JudgeContext;
 import com.amos.cojbackend.judge.strategy.JudgeStrategy;
-import com.amos.cojbackend.model.dto.question.JudgeInfo;
+import com.amos.cojbackend.judge.codesandbox.model.JudgeInfo;
 import com.amos.cojbackend.model.entity.QuestionSubmit;
 import org.springframework.stereotype.Service;
 

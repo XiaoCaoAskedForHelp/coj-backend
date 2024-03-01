@@ -10,7 +10,7 @@ import com.amos.cojbackend.judge.codesandbox.model.ExecuteCodeRequest;
 import com.amos.cojbackend.judge.codesandbox.model.ExecuteCodeResponse;
 import com.amos.cojbackend.judge.strategy.JudgeContext;
 import com.amos.cojbackend.model.dto.question.JudgeCase;
-import com.amos.cojbackend.model.dto.question.JudgeInfo;
+import com.amos.cojbackend.judge.codesandbox.model.JudgeInfo;
 import com.amos.cojbackend.model.entity.Question;
 import com.amos.cojbackend.model.entity.QuestionSubmit;
 import com.amos.cojbackend.model.enums.QuestionSubmitStatusEnum;

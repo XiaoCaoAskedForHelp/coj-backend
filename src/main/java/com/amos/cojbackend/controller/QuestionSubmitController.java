@@ -31,7 +31,7 @@ import javax.servlet.http.HttpServletRequest;
  * 题目提交接口
  */
 @RestController
-@RequestMapping("/question_submit")
+@RequestMapping("/question/submit")
 @Slf4j
 public class QuestionSubmitController {
 

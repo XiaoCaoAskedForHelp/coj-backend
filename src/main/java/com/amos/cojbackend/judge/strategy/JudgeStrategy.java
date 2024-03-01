@@ -1,6 +1,6 @@
 package com.amos.cojbackend.judge.strategy;
 
-import com.amos.cojbackend.model.dto.question.JudgeInfo;
+import com.amos.cojbackend.judge.codesandbox.model.JudgeInfo;
 
 /**
  * 判题策略

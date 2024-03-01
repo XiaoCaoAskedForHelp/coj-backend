@@ -1,6 +1,5 @@
 package com.amos.cojbackend.judge.codesandbox.model;
 
-import com.amos.cojbackend.model.dto.question.JudgeInfo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

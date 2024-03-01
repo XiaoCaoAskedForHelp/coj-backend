@@ -3,7 +3,7 @@ package com.amos.cojbackend.judge.codesandbox.impl;
 import com.amos.cojbackend.judge.codesandbox.CodeSandBox;
 import com.amos.cojbackend.judge.codesandbox.model.ExecuteCodeRequest;
 import com.amos.cojbackend.judge.codesandbox.model.ExecuteCodeResponse;
-import com.amos.cojbackend.model.dto.question.JudgeInfo;
+import com.amos.cojbackend.judge.codesandbox.model.JudgeInfo;
 import com.amos.cojbackend.model.enums.JudgeInfoMessageEnum;
 import com.amos.cojbackend.model.enums.QuestionSubmitStatusEnum;
 
